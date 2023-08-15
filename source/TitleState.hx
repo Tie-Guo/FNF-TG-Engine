@@ -261,7 +261,6 @@ class TitleState extends MusicBeatState
 				FlxG.sound.music.fadeIn(4, 0, 0.7);
 			}
 			}
-		}
 
 		Conductor.changeBPM(titleJSON.bpm);
 		persistentUpdate = true;
