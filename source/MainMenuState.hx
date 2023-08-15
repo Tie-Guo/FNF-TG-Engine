@@ -246,6 +246,12 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
+			
+			if(FlxG.sound.music == null) {
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+
+				FlxG.sound.music.fadeIn(4, 0, 0.7);
+			}
 		}
 
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
