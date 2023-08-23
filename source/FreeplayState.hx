@@ -41,8 +41,11 @@ class FreeplayState extends MusicBeatState
 	var intendedScore:Int = 0;
 	var intendedRating:Float = 0;
 
+	var filters:Array<BitmapFilter> = [];
+	
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
+	
 
 	private var iconArray:Array<HealthIcon> = [];
 
