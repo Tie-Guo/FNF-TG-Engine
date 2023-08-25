@@ -42,7 +42,6 @@ class Main extends Sprite
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
 
-	var androidorientation:String = ClientPrefs.androidorientation;
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -121,7 +120,25 @@ class Main extends Sprite
 			});
 		}
 		#end
-		AndroidOrientation.setScreenOrientation(ClientPrefs.androidorientation);
+	if (ClientPrefs.androidorientation == 'PORTRAIT') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.PORTRAIT);
+	}
+	if (ClientPrefs.androidorientation == 'UNSPECIFIED') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.UNSPECIFIED);
+	}
+	if (ClientPrefs.androidorientation == 'REVERSE_PORTRAIT') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.REVERSE_PORTRAIT);
+	}
+	if (ClientPrefs.androidorientation == 'SENSOR_PORTRAIT') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.SENSOR_PORTRAIT);
+	}
+	if (ClientPrefs.androidorientation == 'LANDSCAPE') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.LANDSCAPE);
+	}
+	if (ClientPrefs.androidorientation == 'REVERSE_LANDSCAPE') {
+		AndroidOrientation.setScreenOrientation(AndroidOrientation.REVERSE_LANDSCAPE);
+	}
+		
 	}
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
@@ -161,7 +178,7 @@ class Main extends Sprite
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
-    #if desktop
+   		#if desktop
 		DiscordClient.shutdown;
 	 #end
 		Sys.exit(1);
