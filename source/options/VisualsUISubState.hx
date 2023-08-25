@@ -32,6 +32,7 @@ using StringTools;
 class VisualsUISubState extends BaseOptionsMenu
 {
 	var language:String = ClientPrefs.language;
+	var androidorientation:String = ClientPrefs.androidorientation;
 	var noteSkinList:Array<String> = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('noteSkinList'));
 	var noteSkinListMods:Array<String> = CoolUtil.coolTextFile(Paths.modFolders('data/noteSkinList'));
 	
@@ -165,6 +166,14 @@ class VisualsUISubState extends BaseOptionsMenu
 			'comboStacking',
 			'bool',
 			true);
+		addOption(option);
+		
+		var option:Option = new Option('Androidorientation',
+			'KKKKKKKKK这是Android orientation',
+			'androidorientation',
+			'string',
+			'UNSPECIFIED',
+			['UNSPECIFIED', 'PORTRAIT', 'REVERSE_PORTRAIT', 'SENSOR_PORTRAIT','SENSOR_PORTRAIT', 'LANDSCAPE', 'REVERSE_LANDSCAPE']);
 		addOption(option);
 		}
 		else {
