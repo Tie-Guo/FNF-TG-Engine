@@ -42,6 +42,7 @@ class Main extends Sprite
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
 
+	var androidorientation:String = ClientPrefs.androidorientation;
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -120,7 +121,7 @@ class Main extends Sprite
 			});
 		}
 		#end
-		AndroidOrientation.setScreenOrientation(AndroidOrientation.PORTRAIT);
+		AndroidOrientation.setScreenOrientation(ClientPrefs.androidorientation);
 	}
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
