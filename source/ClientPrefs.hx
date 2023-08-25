@@ -5,6 +5,7 @@ import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
+import extension.androidorientation.AndroidOrientation;
 
 class ClientPrefs {
 	public static var downScroll:Bool = false;
@@ -40,6 +41,7 @@ class ClientPrefs {
 	public static var virtualPadAlpha:Float = 0.5;
 	public static var perpheralMouseAllowed:Bool = false;
 	public static var language:String = 'English'; //fan?
+	pubilc static var androidorientation:String = 'UNSPECIFIED'
 	public static var funloading:Bool = false;
 	public static var noteSkin:String = 'Default';
 	public static var filecheck:Bool = true;
@@ -151,6 +153,7 @@ class ClientPrefs {
 		FlxG.save.data.perpheralMouseAllowed = perpheralMouseAllowed;
 		
 		FlxG.save.data.language = language;
+		FlxG.save.data.androidorientation = androidorientation;
 		FlxG.save.data.noteSkin = noteSkin;
 		FlxG.save.data.filecheck = filecheck;
 	
@@ -282,6 +285,9 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.language != null) {
 			language = FlxG.save.data.language;
+		}
+		if(FlxG.save.data.androidorientation != null) {
+			androidorientation = FlxG.save.data.androidorientation;
 		}
 		if(FlxG.save.data.funloading != null) {
 			funloading = FlxG.save.data.funloading;
