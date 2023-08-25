@@ -41,7 +41,7 @@ class ClientPrefs {
 	public static var virtualPadAlpha:Float = 0.5;
 	public static var perpheralMouseAllowed:Bool = false;
 	public static var language:String = 'English'; //fan?
-	public static var androidorientation:String = 'UNSPECIFIED'
+	public static var androidorientation:String = 'UNSPECIFIED';
 	public static var funloading:Bool = false;
 	public static var noteSkin:String = 'Default';
 	public static var filecheck:Bool = true;
