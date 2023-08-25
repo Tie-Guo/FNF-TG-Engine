@@ -21,6 +21,7 @@ import Achievements;
 import editors.MasterEditorMenu;
 import flixel.addons.display.FlxBackdrop;
 import flixel.input.keyboard.FlxKey;
+import extension.androidorientation.AndroidOrientation;
 
 #if sys
 import sys.io.File;
@@ -241,7 +242,25 @@ class MainMenuState extends MusicBeatState
 		
 		camGame.zoom = FlxMath.lerp(1, camGame.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * 1), 0, 1));
 		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * 1), 0, 1));
-		
+
+		if (ClientPrefs.androidorientation == 'PORTRAIT') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.PORTRAIT);
+		}
+		if (ClientPrefs.androidorientation == 'UNSPECIFIED') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.UNSPECIFIED);
+		}
+		if (ClientPrefs.androidorientation == 'REVERSE_PORTRAIT') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.REVERSE_PORTRAIT);
+		}
+		if (ClientPrefs.androidorientation == 'SENSOR_PORTRAIT') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.SENSOR_PORTRAIT);
+		}
+		if (ClientPrefs.androidorientation == 'LANDSCAPE') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.LANDSCAPE);
+		}
+		if (ClientPrefs.androidorientation == 'REVERSE_LANDSCAPE') {
+			AndroidOrientation.setScreenOrientation(AndroidOrientation.REVERSE_LANDSCAPE);
+		}
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
